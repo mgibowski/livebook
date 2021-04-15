@@ -9,7 +9,7 @@ image:
   file: .gitpod.dockerfile
 ports:
   - port: 8080
-  - onOpen: open-browser
+    onOpen: open-browser
 tasks:
   - init: mix deps.get --only prod
     command: MIX_ENV=prod mix phx.server
