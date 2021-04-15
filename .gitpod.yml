@@ -1,0 +1,15 @@
+github:
+  prebuilds:
+    # enable for all branches from this repo and forks
+    branches: true
+    pullRequestsFromForks: true
+    # don't add check to pull requests
+    addCheck: false
+image:
+  file: .gitpod.dockerfile
+ports:
+  - port: 8080
+  - onOpen: open-browser
+tasks:
+  - init: mix deps.get --only prod
+    command: MIX_ENV=prod mix phx.server
